@@ -1,0 +1,21 @@
+DeSerialization -> process of converting a json to an object
+Serialization -> process of converting object to a json string
+
+
+Controller : Input --> DTO,
+             output --> DTO,
+             Downstream(service) --> DTO
+       controller only deals with DTOs
+
+Service : Input --> DTO
+          Output --> DTO
+          Downstream(Repository) --> Entity
+    layer at which dto to entity or entity to dto conversion happens
+    as conversion can be part of business logic
+Repository: Input --> Entity
+            Output --> Entity
+            DB saves Entity
+
+Client : Input --> DTO
+         Output --> DTO
+         all DTO
